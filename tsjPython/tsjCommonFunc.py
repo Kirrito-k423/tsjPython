@@ -4,6 +4,15 @@ import time
 import random
 import plotille
 import pprint
+import inspect
+import re
+
+
+def valuePrint(x):
+    frame = inspect.currentframe().f_back
+    s = inspect.getframeinfo(frame).code_context[0]
+    r = re.search(r"\((.*)\)", s).group(1)
+    yellowPrint("{} = {}".format(r, x))
 
 
 def errorPrint(message):

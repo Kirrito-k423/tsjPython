@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tsjPython',  # 打包后的包文件名
-    version='0.1',  # 版本号
+    version='0.2.1',  # 版本号
     keywords=("tsj"),    # 关键字
     description='personal code for tsj',  # 说明
     long_description="none",  # 详细说明
@@ -14,8 +14,7 @@ setup(
     include_package_data=True,
     platforms="any",
     install_requires=['termcolor',
-                      'plotille',
-                      'pprint'],    # 引用到的第三方库
+                      'plotille', 'regex'],    # 引用到的第三方库
     # py_modules=['pip-test.DoRequest', 'pip-test.GetParams', 'pip-test.ServiceRequest',
     #             'pip-test.ts.constants', 'pip-test.ac.Agent2C',
     #             'pip-test.ts.ttypes', 'pip-test.ac.constants',
