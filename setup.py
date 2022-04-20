@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tsjPython',  # 打包后的包文件名
-    version='0.2.1',  # 版本号
+    version='0.2.3',  # 版本号
     keywords=("tsj"),    # 关键字
     description='personal code for tsj',  # 说明
     long_description="none",  # 详细说明
