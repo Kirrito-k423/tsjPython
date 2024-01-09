@@ -1,6 +1,6 @@
 # tsjPython
 
-https://pypi.org/project/tsjPython
+View package at [Pypi](https://pypi.org/project/tsjPython), develop package on desktop win10 at Dormitory.
 
 ## use
 
