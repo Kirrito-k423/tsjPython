@@ -1,6 +1,7 @@
 import os
 import re
 import shutil
+from tqdm import tqdm
 
 #  teminal command or command line interface
 
@@ -14,6 +15,10 @@ def checkFileExists(filename):
 #     tmpOSACAfilePath=taskfilePath+"/tmpOSACAfiles"
 #     mkdir(tmpOSACAfilePath)
 #     return tmpOSACAfilePath
+
+def ls(directory):
+    # 使用 os.listdir() 函数获取目录中的所有文件和文件夹
+    return os.listdir(directory)
 
 def mkdir(path):
 	folder = os.path.exists(path)
@@ -39,6 +44,31 @@ def chmod(filename):
 def mvfile(old, new):
     import shutil
     shutil.move(old, new)
+    
+def move_file_with_progress(src_file, dst_file):
+    # 获取文件大小
+    file_size = os.path.getsize(src_file)
+
+    # 设置每次读取的块大小
+    buffer_size = 1024 * 1024  # 1MB
+
+    # 使用 tqdm 创建进度条
+    with tqdm(total=file_size, unit='B', unit_scale=True, desc=f'Moving {src_file}') as pbar:
+        with open(src_file, 'rb') as fsrc, open(dst_file, 'wb') as fdst:
+            while True:
+                # 读取数据块
+                buffer = fsrc.read(buffer_size)
+                if not buffer:
+                    break
+
+                # 写入数据块到目的文件
+                fdst.write(buffer)
+
+                # 更新进度条
+                pbar.update(len(buffer))
+
+    # 删除原文件
+    os.remove(src_file)
 
 def cpfile(old, new):
     shutil.copyfile(old, new)

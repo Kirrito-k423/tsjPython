@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tsjPython',  # 打包后的包文件名
-    version='0.3.0',  # 版本号
+    version='0.3.1',  # 版本号
     keywords=("tsj"),    # 关键字
     description='personal code for tsj',  # 说明
     long_description="none",  # 详细说明
@@ -19,6 +19,7 @@ setup(
                       'numpy',
                       'plotly',
                       'matplotlib',
+                      "tqdm",
                       ],    # 引用到的第三方库
     # py_modules=['pip-test.DoRequest', 'pip-test.GetParams', 'pip-test.ServiceRequest',
     #             'pip-test.ts.constants', 'pip-test.ac.Agent2C',
